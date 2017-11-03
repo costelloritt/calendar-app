@@ -1,0 +1,58 @@
+.grid {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  border: 5px solid red;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.week {
+  width: 100%;
+  text-align: center;
+}
+
+.day {
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: -5px;
+  margin-left: -1px;
+}
+
+.dayHeader {
+  width: 100%;
+  text-align: center;
+}
+
+.dayHeader-day {
+  box-sizing: border-box;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  display: inline-block;
+  margin-left: -1px;
+  border-bottom: 2px solid black;
+}
+
+.monthHeader {
+  width: 100%;
+  text-align: center;
+  height: 25px;
+  position: relative;
+}
+
+#prev-month {
+  width: 50px;
+  left: 0px;
+  position: absolute;
+}
+
+#next-month {
+  width: 50px;
+  right: 0px;
+  position: absolute;
+}
