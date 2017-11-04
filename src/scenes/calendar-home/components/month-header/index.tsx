@@ -1,16 +1,6 @@
 import * as React from 'react';
+import MonthChangeButton from './components/month-change-button';
 
-interface MonthChangeButtonProps {
-  id: string
-  content: string
-  clickHandler: any
-}
-
-function MonthChangeButton (props: MonthChangeButtonProps) {
-  return(
-    <button className="month-change-button" id={props.id} onClick={props.clickHandler}>{props.content}</button>
-  );
-}
 
 interface MonthHeaderState {
   currentMonth: string,
