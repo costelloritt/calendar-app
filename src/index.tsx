@@ -153,8 +153,7 @@ class Grid extends React.Component <any, GridState> {
 
   render () {
     return(
-      <div className="grid">
-        <MonthHeader />
+      <div className="grid">      
         {this.buildDayHeader()}
         {this.renderGrid()}
       </div>
@@ -167,6 +166,7 @@ class Calendar extends React.Component<any, any> {
   render() {
     return (
       <div className="master-calendar">
+        <MonthHeader />
         <Grid />
       </div>
     );
