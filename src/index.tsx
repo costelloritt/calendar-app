@@ -1,22 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import './index.css';
-import Grid from './scenes/calendar-home/components/grid';
-import MonthHeader from './scenes/calendar-home/components/month-header';
+import Calendar from './scenes/calendar-home';
 
-class Calendar extends React.Component<any, any> {
-
+class App extends React.Component <any, any> {
   render() {
     return (
-      <div className="master-calendar">
-        <MonthHeader />
-        <Grid />
-      </div>
+      <Calendar />
     );
   }
 }
 
-ReactDOM.render(<Calendar />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 
 

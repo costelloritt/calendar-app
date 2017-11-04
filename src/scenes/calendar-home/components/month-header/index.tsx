@@ -1,7 +1,6 @@
 import * as React from 'react';
 import MonthChangeButton from './components/month-change-button';
 
-
 interface MonthHeaderState {
   currentMonth: string,
   currentMonthStartDayIndex: number
