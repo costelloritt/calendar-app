@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Grid from './components/grid';
-import MonthHeader from './components/month-header';
+import Grid from '../grid';
+import MonthHeader from '../month-header';
 
 class Calendar extends React.Component<any, any> {
 
