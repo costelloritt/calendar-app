@@ -6,12 +6,17 @@ interface MonthHeaderState {
   currentMonthStartDayIndex: number
 }
 
-class MonthHeader extends React.Component <any, MonthHeaderState> {
+interface MonthHeaderProps {
+  currentMonth: any,
+  startDayIndex: any
+}
+
+class MonthHeader extends React.Component <MonthHeaderProps, MonthHeaderState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      currentMonth: getCurrentMonth(),
-      currentMonthStartDayIndex: getDaysCurrentMonth()
+      currentMonth: this.props.currentMonth(),
+      currentMonthStartDayIndex: this.props.startDayIndex()
     };
   }
 
@@ -49,17 +54,6 @@ class MonthHeader extends React.Component <any, MonthHeaderState> {
 
 export default MonthHeader;
 
-function getCurrentMonth() {
-  var monthNames = ["January", "February", "March", "April", "May", "June",
-                    "July", "August", "September", "October", "November",
-                    "December"];
-
-  var currentDate = new Date();
-  var currentMonth = monthNames[currentDate.getMonth()];
-
-  return currentMonth;
-}
-
 function getMonth(navDirection: number, currentMonth: string) {
   var monthNames = ["January", "February", "March", "April", "May", "June",
                     "July", "August", "September", "October", "November",
@@ -84,17 +78,4 @@ function getMonth(navDirection: number, currentMonth: string) {
   }
 
     return newMonth;
-}
-
-function getDaysCurrentMonth() {
-
-  //var weekDayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-  var date = new Date();
-  var date1 = new Date(date.getFullYear(), date.getMonth(), 1);
-
-  var firstDayOfWeek = date1.getDay();
-
-  return firstDayOfWeek;
-
 }

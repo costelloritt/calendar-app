@@ -10,13 +10,17 @@ interface GridState {
   monthStartDay: number
 }
 
-class Grid extends React.Component <any, GridState> {
-  constructor(props: any) {
+interface GridProps {
+  returnCurrentMonthDays: any
+}
+
+class Grid extends React.Component <GridProps, GridState> {
+  constructor(props: GridProps) {
     super(props);
     this.state = {
       weeks: [0,1,2,3,4,5],
       days: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-      monthStartDay: getDaysCurrentMonth()
+      monthStartDay: this.props.returnCurrentMonthDays()
     }
   }
 
@@ -84,16 +88,3 @@ class Grid extends React.Component <any, GridState> {
 }
 
 export default Grid;
-
-function getDaysCurrentMonth() {
-
-  //var weekDayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-  var date = new Date();
-  var date1 = new Date(date.getFullYear(), date.getMonth(), 1);
-
-  var firstDayOfWeek = date1.getDay();
-
-  return firstDayOfWeek;
-
-}
