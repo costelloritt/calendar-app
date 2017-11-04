@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import './index.css';
+import Day from './scenes/calendar-home/components/day';
 
 interface MonthChangeButtonProps {
   id: string
@@ -58,17 +59,6 @@ class MonthHeader extends React.Component <any, MonthHeaderState> {
       </div>
     );
   }
-}
-
-interface DayProps {
-  dayIndex: string,
-  clickHandler: any
-}
-
-function Day (props: DayProps) {
-    return(
-      <div className="day" onClick={props.clickHandler}></div>
-    );
 }
 
 interface WeekProps {
