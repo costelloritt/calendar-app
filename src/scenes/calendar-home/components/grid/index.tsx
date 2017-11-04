@@ -1,26 +1,8 @@
 import * as React from 'react';
 import Day from '../day';
 import Week from '../week';
-
-interface DayHeaderDayProps {
-  dayOfWeek: string
-}
-
-function DayHeaderDay (props: DayHeaderDayProps) {
-  return (
-    <div className="dayHeader-day">{props.dayOfWeek}</div>
-  );
-}
-
-interface DayHeaderProps {
-  loadHeaderDays: any
-}
-
-function DayHeader (props: DayHeaderProps) {
-  return (
-    <div className="dayHeader">{props.loadHeaderDays()}</div>
-  );
-}
+import DayHeader from './components/day-header';
+import DayHeaderDay from './components/day-header-day';
 
 interface GridState {
   weeks: Array<any>,
